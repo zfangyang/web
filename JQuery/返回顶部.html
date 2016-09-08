@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			ul {
+				height: 3000px;
+			}
+			.top {
+				position: fixed;
+				width: 50px;
+				height: 50px;
+				cursor: pointer;
+				background-color: deeppink;
+				right: 0;
+				bottom: 150px;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>abb1</li>
+			<li>abb2</li>
+			<li>abb3</li>
+			<li>abb4</li>
+			<li>abb5</li>
+			<li>abb6</li>
+			<li>abb7</li>
+			<li>abb8</li>
+			<li>abb9</li>
+			<li>abb10</li>
+			<li>abb11</li>
+			<li>abb12</li>
+			<li>abb13</li>
+			<li>abb14</li>
+			<li>abb15</li>
+			<li>abb16</li>
+			<li>abb17</li>
+			<li>abb18</li>
+			<li>abb19</li>
+			<li>abb20</li>
+			<li>abb21</li>
+			<li>abb22</li>
+			<li>abb23</li>
+			<li>abb24</li>
+			<li>abb25</li>
+			<li>abb26</li>
+			<li>abb27</li>
+			<li>abb28</li>
+			<li>abb29</li>
+			<li>abb30</li>
+			<li>abb31</li>
+			<li>abb32</li>
+			<li>abb33</li>
+			<li>abb34</li>
+			<li>abb35</li>
+			<li>abb36</li>
+			<li>abb37</li>
+			<li>abb38</li>
+			<li>abb39</li>
+			<li>abb40</li>
+			<li>abb41</li>
+			<li>abb42</li>
+			<li>abb43</li>
+			<li>abb44</li>
+			<li>abb45</li>
+			<li>abb46</li>
+			<li>abb47</li>
+			<li>abb48</li>
+			<li>abb49</li>
+			<li>abb50</li>
+		</ul>
+		<div class="top"></div>
+		
+		<script src="js/jquery-3.1.0.js"></script>
+		<script>
+			var $top = $('.top')
+			$top.on('click', function() {
+				$('body').animate({scrollTop: 0}, 500 );
+//				$('body').scrollTop(0);
+						
+			});
+			
+			$(window).on('scroll', function() {
+				var $this = $(this),
+					h = $this.height(),
+					st = $this.scrollTop();
+					
+					if (st > h ) {
+						$top.slideDown();
+					}else {
+						$top.slideUp();
+					};
+				
+				
+				
+				
+			});
+			
+			
+		</script>
+	</body>
+</html>

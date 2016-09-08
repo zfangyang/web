@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			body {background-color: #ccc;}
+			div {margin: 50px auto; 
+				width: 400px;
+				height: 250px;
+				background-color: pink;
+				overflow: hidden;
+				position: relative;
+			}
+			li {
+				width: 400px;
+				height: 250px;
+			}
+			span {
+				width:30px; 
+				height: 60px;
+				background-color: #333;
+				opacity: 0.5;
+				filter: alpha(opacity=50);
+				position: absolute;
+				left: 0;
+				top: 83px;
+				cursor: pointer;
+				display: none;
+			}
+			div:hover span {
+				display: block;
+			}
+			span.right {
+				left:auto;
+				right: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wp">
+			<ul>
+				<li>AAA</li>
+				<li>BBB</li>
+				<li>CCC</li>
+				<li>DDD</li>
+				<li>EEE</li>
+			</ul>
+			<span class="left"></span>
+			<span class="right"></span>
+						
+		</div>
+		
+		
+		
+		<script src="js/jquery-3.1.0.js"> </script>
+		
+		<script type="text/javascript">
+			$('span').on('click', function() { 
+				var $this = $(this),
+				  	$ul = $('ul');
+				  		
+				if ($this.hasClass('right')) { // next
+					$ul.append($ul.find('li:first'));
+				} else { // prev
+					$ul.prepend($ul.find('li:last'));						
+				}
+			});
+			
+			
+			
+			
+		</script>
+			
+	
+	</body>
+</html>

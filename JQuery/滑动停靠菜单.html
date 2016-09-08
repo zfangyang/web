@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.da {
+				position: fixed;
+				right: -100px;
+				top: 50%;
+				margin-top: -50px;
+				height: 100px;
+				width: 100px;
+				background-color: red;
+			}
+			.xiao {
+				position: absolute;
+				left: -40px;
+				width: 40px;
+				height: 40px;
+				top: 50%;
+				margin-top: -20px;
+				background-color: deeppink;
+				cursor: pointer;
+			}
+			
+			
+		</style>
+		
+		
+	</head>
+	<body>
+		<div class="da">
+			<div class="xiao">
+				
+			</div>
+			
+		</div>
+		
+		<script src="js/jquery-3.1.0.js"></script>
+		<script> 
+			var $xiao = $('.xiao'),
+				 $da = $('.da');
+			
+				$xiao
+					.on('mouseenter', function() {
+						$da.stop().animate({right: 0}, 500);					
+					})
+					.parent()
+					.on('mouseleave', function() {
+						$da.stop().animate({right: '-100px'}, 500);					
+					})
+		
+		</script>
+	</body>
+</html>

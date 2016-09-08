@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+ul,li {
+    list-style:none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-size: 12px;
+}
+.img1 {
+    background-image:url(../img/im.png); 
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 10px;
+    background-position: -20px 0;
+}
+
+.zhuti {
+    width: 1065px;
+    height: 100%;
+    margin: 30px auto;
+}
+
+.zhuti li {
+    width: 250px;
+    height: 400px;
+    float: left;
+    margin-left: 10px;  
+}
+
+.zhuti li:hover {
+    border:1px solid #E9E9E9;
+    cursor: pointer;
+    width: 248px;
+    height: 398px;
+}
+
+.zhuti li img {
+    margin: 0 auto;
+    display:block;
+}
+.zhuti li a{
+    float: left;
+    color: #666;
+}
+.zhuti li p {
+    margin-right: 10px;
+    color: #e4393c;
+    font-size: 20px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.zhuti li span {
+    color: #005aa0;
+    font-family: verdana;
+    font-weight: bold;
+}
+
+.zhuti li a.vivo {
+    height: 35px;
+    line-height: 35px;
+    color: #666;
+    position: relative;
+    
+
+}
+.clear {
+    clear:both;
+}
+/*导航条 */
+
+.dht {
+    border-bottom: 1px solid #C81623;
+    width: 1200px;
+    margin:50px auto;
+}
+
+.dht:after {
+    content: "";
+    display:block;
+    clear:both;
+}
+.dht1 {
+    float: right;
+     border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.dht1 li {
+    float: left;
+    padding:10px 20px;
+    position: relative;
+
+}
+.dht1 li:after {
+    width: 0px;
+    height: 14px;
+    border:1px solid #ccc;
+    position: absolute;
+}
+.dht1 li a {
+    color: #666;
+}

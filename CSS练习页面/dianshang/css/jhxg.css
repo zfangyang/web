@@ -1,0 +1,202 @@
+div.aaa {
+    height: 50px;
+    width: 200px;
+    line-height: 50px;
+    background-color: red;
+    color:#fff;
+    border-radius: 4px;
+    border:1px solid #ccc;
+    cursor: pointer;
+    text-align: center;
+}
+div.aaa:hover {
+    background-color: blue;
+    color:red;
+
+    border:1px solid #ddd;
+}
+
+button {
+    height: 50px;
+    width: 200px;
+    line-height: 50px;
+    background-color: red;
+    color:#fff;
+    border-radius: 4px;
+    border:1px solid #ccc;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 16px;
+
+}
+
+button:hover {
+    background-color: blue;
+    color:red;
+
+    border:1px solid #ddd;
+}
+
+ul,li {
+    list-style: none;
+}
+
+.abc ul li {
+    float: left;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background-color: pink;
+    color: #fff;
+    margin-left: 10px;
+    margin-top: 9px;
+}
+
+ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;    
+
+}
+
+div.abc {
+    height: 50px;
+    width: 100%;
+    background-color: blue;
+}
+div.abc-1 {
+    height: 50px;
+    width: 100%;
+    background-color: blue;
+}
+
+.abc-1 ul li {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background-color: pink;
+    color: #fff;
+    margin-left: 10px;
+    margin-top: 9px;
+}
+div.bbb {
+    height: 300px;
+    margin:0 auto;
+    border:1px solid #ccc;
+    } 
+
+div.bb1 {
+    width: 300px;
+    height: 300px;
+    background-color:blue;
+    float: left;
+
+}
+
+div.bb2 {
+    width: 300px;
+    height: 300px;
+    background-color:yellow;
+    float: right;
+}
+
+div.bb3{
+    margin:0 300px;
+    height: 300px;
+    background-color: red;
+}
+
+
+table {
+    background-color: #000;
+
+}
+
+td {
+    width: 200px;
+    height: 40px;
+    background-color: #fff;
+}
+
+table.ccc {
+    border-collapse: collapse;
+
+}
+
+.ccc td {
+    border:1px solid red;
+}
+
+.juzhong {
+    width: 600px;
+    height: 400px;
+    background-color: red;
+    position: relative;
+}
+
+.juzhong .juzhong-1 {
+    width: 150px;
+    height: 150px;
+    background-color: yellow;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left:-75px;
+    margin-top: -75px;
+}
+
+
+hr {
+    display: block;
+    margin:25px 0;
+}
+
+.kuang {
+    height: 50px;
+    width: 200px;
+    background-color: red;
+    font-size: 16px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    margin-bottom: 40px;
+    margin-left: 50px;
+}
+
+.kuang1 {
+    height: 150px;
+    width: 300px;
+    border: 1px solid red;
+    position: relative;
+    border-radius: 8px;
+
+}
+
+.sanjiao {
+    height: 0;
+    width: 0;
+    border-color: transparent transparent red transparent;
+    border-width:0 10px 10px 10px;
+    border-style: solid;
+    margin: -10px auto 0;
+   
+
+   
+
+
+}
+.sanjiao-1 {
+    height: 0;
+    width: 0;
+    border-color: transparent transparent #fff transparent;
+    border-width:0 10px 10px 10px;
+    border-style: solid;
+    margin: -9px auto 0;
+       
+
+}

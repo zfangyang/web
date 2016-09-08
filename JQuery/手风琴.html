@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			body {
+				background-color: #ccc;
+			}
+			div.abc {
+				width: 300px;
+				margin: 50px auto;
+			}
+			ul li  {
+				list-style: none;
+			}
+			ul>li:hover {
+				background-color: palegreen;
+				cursor: pointer;
+			}
+			p, li {
+				width: 300px;
+				line-height: 35px;
+				text-align: center;
+				background-color: pink;
+			}
+			ul {
+				display:none;
+			}
+			p {
+				background-color: #f50;
+				margin-bottom: 1px;
+				cursor: pointer;
+			}
+			.bai {
+				color: #fff;
+			}
+		</style>
+		
+		
+	</head>
+	<body>
+		
+		<div class="abc">
+			<div class="title">
+				<p class="p">河南省</p>
+				<ul>
+					<li>郑州市</li>
+					<li>新乡市</li>
+					<li>安阳市</li>
+					<li>鹤壁市</li>
+				</ul>
+			</div>
+			<div class="title">
+				<p>山东省</p>
+				<ul>
+					<li>济南市</li>
+					<li>临沂市</li>
+					<li>泰安市</li>
+					<li>东明市</li>
+				</ul>
+			</div>
+			<div class="title">
+				<p>山西省</p>
+				<ul>
+					<li>太原市</li>
+					<li>大同市</li>
+					<li>晋城市</li>
+					<li>晋中市</li>
+				</ul>
+			</div>
+			<div class="title">
+				<p>河北省</p>
+				<ul>
+					<li>石家庄</li>
+					<li>邯郸市</li>
+					<li>唐山市</li>
+					<li>保定市</li>
+				</ul>
+			</div>	
+		</div>
+		
+		
+		<script src="js/jquery-3.1.0.js"></script>
+			
+		<script>
+			$title = $('.title');
+			console.log($title);
+			$title.on('click', function()  {
+				var $this = $(this);
+				$this				
+					.find('p').toggleClass('bai')
+					.end()
+					.find('ul').slideToggle()
+					.end()
+					.siblings()
+					.find('p.bai').removeClass('bai')
+					.end()
+					.find('ul:visible').slideUp();
+//				
+				
+			});
+			
+		
+		</script>
+		
+	</body>
+</html>
