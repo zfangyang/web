@@ -5,25 +5,89 @@
 		<title></title>
 		<style>
 			*{margin: 0; padding: 0;}
-			.zhuti{
-				background-image: url(img/x6S.jpg);
+			.zhuti {position: relative; width:300px}
+			.zhuti img{
 				width: 300px;
+				border: 2px solid #ccc;
 			}
+			.follow-div {
+				position: absolute;
+				top: 0;left: 0;
+				background-color: #ccc;
+				width: 100px; height: 100px;
+				opacity: 0.5;
+				display: none;
+			}
+			.fangda {
+				position: absolute;
+				top: 0; right: -225px;
+				width:200px;
+				height:200px;
+				border: 2px solid red;
+				background-image: url(img/d6s.jpg);
 				
+				display: none;
+			}
 			
 		</style>
 	</head>
 	<body>
 		
 		<div class="zhuti">
-
+			<img src="img/x6S.jpg" alt="" />
 			<div class="follow-div"></div>
-			<div class="fangda"></div>
+			<div class="fangda"></div>		
+		</div>		
+		
+		<script src="js/jquery-3.1.0.js"></script>
+		<script>
+			!function() {
+				var $zhuti = $('.zhuti'),
+				   	$followDiv = $('.follow-div'),
+				   	$fangda = $('.fangda'),
+				   	$img = $('.zhuti>img'),
+					imgWidth = $img.width();
+					bili = 800 / imgWidth;
+				$zhuti
+					.on('mouseenter mouseleave', function() {
+						$followDiv.add($fangda).toggle();						
+					})
+//					.on('mouseover', function() {
+//						$followDiv.add($fangda).css({display:'block'});						
+//					})
+//					.on('mouseout', function() {
+//						$followDiv.add($fangda).css({display:'none'});						
+//					})
+					.on('mousemove', function(e) {
+						var x = e.clientX;
+						var y = e.clientY;	
+						
+						if((x + 50) >imgWidth) { //右
+							x = imgWidth-50;
+						}
+						if((x - 50) <0) {    //左
+							x = 50;
+						}
+						if((y + 50) >imgWidth) { //下
+							y = imgWidth-50;
+						}
+						if((y - 50) <0) {    //上
+							y = 50;
+						}
+						$followDiv.css({
+							top: y - 50,
+							left:  x -50							
+						});
+						$fangda.css('background-position',-x * bili+100  + 'px' +' '+  ((-y * bili) + 100 )+ 'px' );
+												
+					});
+				
+				
+				
+			}();
 			
 			
-		</div>
-		
-		
-		
+			
+		</script>
 	</body>
 </html>
