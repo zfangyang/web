@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			ul {
+				width: 1000px;
+				height: 150px;
+				border: 2px solid #ccc;
+				overflow: hidden;
+				background-color: pink;
+			}
+			li {
+				width: 150px;
+				float: left;
+				border: 1px solid red;
+				height: 140px;
+				margin-left: 10px;
+				background-color: #f50;
+				margin-top: 5px;
+				cursor: pointer;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li style="background-color: #aaa;">1</li>
+			<li style="background-color: #bbb;">2</li>
+			<li style="background-color: #ccc;">3</li>
+			<li style="background-color: #ddd;">4</li>
+			<li style="background-color: #eee;">5</li>
+		</ul>
+		
+		<script src="js/jquery-3.1.0.js"></script>
+		<script>
+			!function() {
+				var $ul = $('ul'),
+					$li = $('li'),
+					width = $li.width();
+				$ul.append($li.clone());
+//				$ul.width((width + 10) * $('li').length);
+//				console.log($ul.width());
+				
+				function lunbo() {
+					$ul.animate({marginLift: -width}, 500, function() {
+						$ul 
+							.append($('li:first'))
+							.css('margin-left', 0);
+																		
+					});
+					
+				}
+					
+				timer = setInterval(lunbo , 1000);
+				
+				$ul.mouseenter(function() {
+//					console.log(99);
+					clearInterval(timer);					
+				})
+				$ul.mouseleave(function() {
+					timer = setInterval(lunbo , 1000);
+				})
+				
+			}();
+			
+			
+		</script>
+		
+	</body>
+</html>
