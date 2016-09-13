@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			body {background-color: #ccc;}
+			div.wp {margin: 50px auto; 
+				width: 800px;
+				height:400px;
+				background-color: pink;
+				overflow: hidden;
+				position: relative;
+			}
+			li>a>img {
+				width: 800px;
+				height:400px;
+			}
+			li {
+				position: absolute;
+				top: 0;
+				right: 0;
+				z-index: 0;
+			}
+			li.cur { z-index: 1;}
+			span {
+				width:50px; 
+				height: 100px;
+				background-color: #f50;
+				opacity: 0.5;
+				filter: alpha(opacity=50);
+				position: absolute;
+				left: 0;
+				top: 130px;
+				cursor: pointer;
+				display: none;
+				z-index: 999;
+			}
+			div:hover span {
+				display: block;
+			}
+			span.right {
+				left:auto;
+				right: 0;
+			}
+			div.dibu>p{
+				float: left;
+				width:160px;
+				height: 40px;
+				background-color: #f50;		
+				opacity: 0.7;	
+				filter:alpha(opacity=70);
+			}
+			div.dibu>p.cur {background: red;}
+			div.dibu {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wp">
+			<ul>
+				<li>
+					<a href="">
+						<img src="img/car1.png" alt="" />
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/car2.png" alt="" />
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/car3.png" alt="" />
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/car4.png" alt="" />
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/car5.png" alt="" />
+					</a>
+				</li>
+			</ul>
+			<span class="left"></span>
+			<span class="right"></span>
+			<div class="dibu">
+				<p>1</p>
+				<p>2</p>
+				<p>3</p>
+				<p>4</p>
+				<p>5</p>
+			</div>
+						
+		</div>
+		<script src="js/jquery-3.1.0.js"> </script>
+		<script>
+			!function(){
+				var tupianlunbo = function(selector) {
+					var $target = $(selector),
+						$slideLi = $target.find('ul>li'),
+						$slideP = $target.find('.dibu > p'),
+		                timer;
+//					console.log($slideP)	
+					$slideLi.each(function(i) {
+						$(this).attr('index', i);					
+					});
+					$slideP.on('click', function() {
+						var $this = $(this),
+							currIndex = $this.index(),
+							oldIndex = $this.siblings('.cur').index();
+		
+						$this.addClass('cur').siblings('.cur').removeClass('cur');
+		
+						$slideLi.eq(oldIndex).before($slideLi.eq(currIndex));
+		
+						$target.find('ul > li').each(function(i) {
+//							$(this).css('z-index', $slideLi.length - i - 1);
+						});
+		
+						$slideLi.eq(oldIndex).show().fadeOut();
+						$slideLi.eq(currIndex).hide().fadeIn();
+//						$target.find('li[index='+currIndex+']').hide().fadeIn();
+		
+						// console.log($target.find('.slide-pic').find('li[index='+currIndex+']'));
+		
+						// console.log('currIndex: ' + currIndex);
+						// console.log('oldIndex: ' + oldIndex);
+		
+					});
+					
+				}
+				
+				
+				
+			tupianlunbo ('.wp');
+			}();
+			
+			
+		</script>
+	</body>
+</html>
